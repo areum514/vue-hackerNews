@@ -7,19 +7,23 @@ import JobsView from '../views/JobsView.vue';
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes: [
     {
-      path: '/news',
+      path: "/",
+      redirect: '/news'
+    },
+    {
+      path: "/news",
       component: NewsView,
     },
     {
-      path: '/ask',
+      path: "/ask",
       component: AskView,
     },
     {
-      path: '/jobs',
+      path: "/jobs",
       component: JobsView,
     },
-  ]
-})
+  ],
+});
