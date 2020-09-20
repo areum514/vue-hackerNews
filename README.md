@@ -25,18 +25,25 @@ this
 
 
 다우나믹 라우팅 매칭
-1. views/UserView.vue 생성 하고 route의 param은 거를 api 파라미터로 넘겨서 호출하기
+1. views/UserView.vue 생성 하고 
+2. 라우터에 ItemView로 갈수 있는 라우터 정보를 등록 
+{
+    path:'',
+    component:,
+}
+
+3. 해당 페이지 컴포넌트로 이동햇을때 받아온 param를 이용해서 페이지에 데이터를 표시 
 created(){
   const userName=this.$route.params.id
   this.$store.dispatch('FETCH_USERS',userName);
   }
 
-2. api/index.js에 
+4. api/index.js에 
 function fetchUserInfo(username) {
   return axios.get(`${config.baseUrl}user/${username}.json`);
 }
 
-3. store 에서 FETCH_USERS
+5. store 에서 FETCH_USERS
 FETCH_USERS({commit},name){
             fetchUserInfo(name)
             .then(({data})=>{
