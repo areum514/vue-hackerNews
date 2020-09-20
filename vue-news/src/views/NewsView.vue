@@ -1,15 +1,16 @@
 <template>
   <div>
-    new
+    news
   </div>
 </template>
 
 <script>
-
-export default {
-
+//import {fetchNewsList} from '../api/index.js'
+export default{
+  //fetchNewsList()
 }
 </script>
+
 
 <style>
 
