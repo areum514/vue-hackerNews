@@ -13,3 +13,4 @@ tenokate  에서는 vscode에서 자동으로 케밥으로 <too-bar></too-bar> �
 구성 tip
 1. views안에 있는 컴포넌트 들은 페이지에 라우팅 관련 부분만 들어가는게 좋음 
 
+api를 호출할때마다 view 컴포넌트에 axio코드를 남달하겠지..!! 그래서 src/api/index.js를 따로 두어서 여기서 

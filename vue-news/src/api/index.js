@@ -9,5 +9,13 @@ const config = {
 function fetchNewsList(){
     return axios.get(`${config.baseUrl}news/1.json`);
 }
+function fetchJobswsList() {
+  return axios.get(`${config.baseUrl}jobs/1.json`);
+}
 
-export { fetchNewsList };
+function fetchAsksList() {
+  return axios.get(`${config.baseUrl}ask/1.json`);
+}
+
+
+export { fetchNewsList, fetchJobswsList,fetchAsksList};
