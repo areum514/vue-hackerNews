@@ -1,24 +1,19 @@
 <template>
   <div>
-    <div v-for="user in this.$store.state.news">{{user.title}}</div>
+    <p v-for="item in this.$store.state.news">
+      <a v-bind:href="item.url" target='_blank'>{{item.title}}</a>
+      <small>{{item.time_ago}} by {{item.user}}</small>
+      </p>
   </div>
 </template>
 
 <script>
-//axios는 HTTP 클라이언트 라이브러리로써, 비동기 방식으로 HTTP 데이터 요청을 실행합니다.
+import {mapState,mapGetters} from 'vuex';
+
 export default{
-  //fetchNewsList()
   
   created(){
     this.$store.dispatch('FETCH_NEWS');
-    /* fetchNewsList()
-    .then(response=>{
-      console.log(response);
-      this.users=response.data;
-    })
-    .catch(function(error){
-      console.log(error);
-    }) */
   }
 }
 </script>
