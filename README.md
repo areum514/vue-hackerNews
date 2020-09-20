@@ -22,3 +22,28 @@ this
  this 4가지와 화살표 함수의 this
 
  객체생성과 비동기에서는 전역을 가르키지않고 우리가 알고있는 지역을 가르켜.. 좀더 찾아보자
+
+
+다우나믹 라우팅 매칭
+1. views/UserView.vue 생성 하고 route의 param은 거를 api 파라미터로 넘겨서 호출하기
+created(){
+  const userName=this.$route.params.id
+  this.$store.dispatch('FETCH_USERS',userName);
+  }
+
+2. api/index.js에 
+function fetchUserInfo(username) {
+  return axios.get(`${config.baseUrl}user/${username}.json`);
+}
+
+3. store 에서 FETCH_USERS
+FETCH_USERS({commit},name){
+            fetchUserInfo(name)
+            .then(({data})=>{
+                commit('SET_USER',data)
+            })
+            .catch(error=>{
+                console.log(error);
+
+            })
+        },
