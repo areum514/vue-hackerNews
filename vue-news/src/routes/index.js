@@ -34,7 +34,7 @@ export default new VueRouter({
       component: UserView,
     },
     {
-      path: "/item",
+      path: "/item/:id",
       component: ItemView,
     },
   ],
