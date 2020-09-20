@@ -6,7 +6,7 @@
         <div>
           <i class="fas fa-user fa-3x" ></i>
         </div>
-        
+
         <div class="user-description">
           <router-link :to='`/user/${fetchedItem.user}`'>
             {{fetchedItem.user}}
