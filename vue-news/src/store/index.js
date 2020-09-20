@@ -10,8 +10,16 @@ export const store=new Vuex.Store({
     state:{
         news:[],
         jobs:[],
-        items:[]
+        ask:[]
     },
+    //computed랑 동일한 속성인데 다만 store에 있는 것
+    getters:{
+        fetchedAsk(state){
+            return state.ask;
+        }
+
+    },
+
     mutations:{
         SET_NEWS(state,news){
             state.news=news
@@ -19,8 +27,8 @@ export const store=new Vuex.Store({
         SET_JOBS(state,jobs){
             state.jobs=jobs
         },
-        SET_ASK(state,items){
-            state.items=items
+        SET_ASK(state,ask){
+            state.ask=ask
             
         }
     },
