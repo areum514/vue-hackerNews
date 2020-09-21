@@ -45,7 +45,7 @@
 <script>
 
 export default{
-  created(){
+   /*created(){
     const name=this.$route.name;
     let actionName='';
     if (name==="news"){
@@ -55,8 +55,10 @@ export default{
     }else if(name==="jobs"){
         actionName="FETCH_JOBS"
     }
+    FETCH_NEWS
+
     this.$store.dispatch(actionName);
-    },
+    }, */
     computed:{
         listItems(){
             const name=this.$route.name;

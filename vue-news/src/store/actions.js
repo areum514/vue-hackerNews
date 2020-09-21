@@ -6,6 +6,7 @@ export default{
             fetchNewsList()
             .then(response=>{
                 context.commit('SET_NEWS',response.data)
+                return response
             })
             .catch(error=>{
                 console.log(error);
@@ -17,6 +18,8 @@ export default{
             fetchJobswsList()
             .then(({data})=>{
                 commit('SET_JOBS',data);
+                return response
+
             })
             .catch(error=>{
                 console.log(error);
@@ -26,6 +29,8 @@ export default{
             fetchAsksList()
             .then(response=>{
                 context.commit('SET_ASK',response.data)
+                return response
+
             })
             .catch(error=>{
                 console.log(error);

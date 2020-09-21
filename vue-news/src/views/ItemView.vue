@@ -23,6 +23,7 @@
 <script>
 import UserProfile from '../components/UserProfile.vue'
 import {mapGetters} from 'vuex'
+
 export default {
   components:{
     UserProfile
@@ -31,9 +32,14 @@ export default {
     ...mapGetters(['fetchedItem']),
   },
 created(){
-  const itemId=this.$route.params.id
-  console.log(itemId);
-  this.$store.dispatch('FETCH_ITEM',itemId);
+  this.$store.dispatch('FETCH_ITEM',itemId)
+  .then(()=>{
+        console.log('fetched');
+        bus.$emit('end:spinner');
+      })
+      .catch((error)=>{
+        console.log(error);
+      })
 }
 }
 </script>
