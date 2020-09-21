@@ -20,10 +20,10 @@ export default {
     }
   },
 
- created(){
+ /* created(){
   const userName=this.$route.params.id
   this.$store.dispatch('FETCH_USERS',userName);
-  }
+  } */
 }
 </script>
 
