@@ -33,7 +33,7 @@
                 :to="`/user/${item.user}`" class="link-text">{{item.user}}
             </router-link>
             </template>
-            
+
            
           </small>
         </div>
