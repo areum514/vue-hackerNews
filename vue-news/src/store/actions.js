@@ -32,11 +32,11 @@ export default {
     //ListMixin에 .then()을 의미하게 되지 
     // 순서 보장을 위해 필요 
     return fetchList(pageName)
-      .then(({ data }) => {
+      .then(response => {
         //#4
         console.log("4");
-
-        commit("SET_LIST", data);
+        commit("SET_LIST", response.data);
+        return response
       })
       .catch((error) => {
         console.log(error);

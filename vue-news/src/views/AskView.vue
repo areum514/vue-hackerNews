@@ -6,12 +6,12 @@
 
 <script>
 import ListItem from '../components/ListItem.vue'
-import bus from '../utils/bus.js'
 import ListMixin from '../mixns/ListMixin.js'
 export default {
   components:{
     ListItem
   },
+  
   mixins:[ListMixin],
 }
 </script>
