@@ -8,7 +8,7 @@ import {
 export default {
   
   FETCH_USERS({ commit }, name) {
-    fetchUserInfo(name)
+    return fetchUserInfo(name)
       .then(({ data }) => {
         commit("SET_USER", data);
       })
@@ -17,7 +17,7 @@ export default {
       });
   },
   FETCH_ITEM({ commit }, item) {
-    fetchItemInfo(item)
+    return fetchItemInfo(item)
       .then(({ data }) => {
         commit("SET_ITEM", data);
       })
@@ -25,9 +25,17 @@ export default {
         console.log(error);
       });
   },
+  //#2
   FETCH_LIST({ commit }, pageName) {
-    fetchList(pageName)
+    //#3 
+    //retrun 이 프로미스의 결과가 체이닝이 되서 
+    //ListMixin에 .then()을 의미하게 되지 
+    // 순서 보장을 위해 필요 
+    return fetchList(pageName)
       .then(({ data }) => {
+        //#4
+        console.log("4");
+
         commit("SET_LIST", data);
       })
       .catch((error) => {
