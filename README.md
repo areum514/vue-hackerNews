@@ -64,3 +64,16 @@ HOC 하이오더컴포넌트 컴포넌트 로직을 재사용하기 위한 고�
 	- created: (컴포넌트가 생성)ㄷ되자마자 호출되는 로직
 2. 라우터 네비게이션 가드
 	- 특정 url로 접근하기 전의 동작을 정의하는 속성(함수)
+
+
+
+
+Netlify를 이용한 배포 실습
+0. npm run build 
+1. basedirectory 설정 잘해주기 
+2. vuecli 에서 depolyment 관련 문서 보기 
+
+.env 파일을 이용해 데이터 보호하기 
+//env 환경 변수 파일을 이용한 옵션 변경 방법
+//VUE_를 붙이면 process.env.VUE_APP_TITLE 이런식으로 사용 가능함 그럼 출력은 HELLO 나오징~ 
+VUE_APP_TITLE=HELLO
